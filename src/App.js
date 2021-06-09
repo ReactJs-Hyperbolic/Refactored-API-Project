@@ -1,24 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { PokemonProvider } from './contexts/PokemonContext';
+import { PokemonCard } from './components/PokemonCard';
+import { Fetcher } from './API/PokemonFetcher';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PokemonProvider>
+      <h1>Pokemon API Rolodex</h1>
+      <Fetcher />
+      <PokemonCard />
+    </PokemonProvider>
   );
 }
 
